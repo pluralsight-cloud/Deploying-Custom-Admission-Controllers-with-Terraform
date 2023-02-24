@@ -20,14 +20,12 @@ output "cluster_name" {
 
 output "AccessKey" {
   description = "AWS Access Key ID"
-  type        = string
   value       = var.AccessKey
   sensitive   = true
 }
 
 output "SecretKey" {
   description = "AWS Secret Access Key"
-  type        = string
   value       = var.SecretKey
   sensitive   = true
 }
