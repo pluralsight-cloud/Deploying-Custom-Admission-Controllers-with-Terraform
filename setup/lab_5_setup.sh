@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
-### Download EKS Terraform Config ###
-wget https://github.com/pluralsight-cloud/Deploying-Custom-Admission-Controllers-with-Terraform/raw/main/eks.zip
+### Install Docker ###
+yum -y install docker
+usermod -a -G docker cloud_user
+su - cloud_user -c 'newgrp docker'
+systemctl enable docker.service
+systemctl start docker.service
 
-### Unzip the EKS Terraform Config Files ###
-unzip eks.zip
-rm -rf eks.zip
+sleep 3
+
+### Clone course repo ###
+git clone https://github.com/pluralsight-cloud/Deploying-Custom-Admission-Controllers-with-Terraform.git
+
+sleep 3
 
 ### Deploy the EKS Cluster with Terraform ###
 cd eks
