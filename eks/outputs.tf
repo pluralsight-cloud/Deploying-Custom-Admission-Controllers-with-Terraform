@@ -18,13 +18,13 @@ output "cluster_name" {
   value       = module.eks.cluster_name
 }
 
-variable "AccessKey" {
+output "AccessKey" {
   description = "AWS Access Key ID"
   type        = string
   sensitive   = true
 }
 
-variable "SecretKey" {
+output "SecretKey" {
   description = "AWS Secret Access Key"
   type        = string
   sensitive   = true
