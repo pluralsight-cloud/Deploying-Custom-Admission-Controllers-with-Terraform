@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ### Download EKS Terraform Config ###
-wget https://github.com/pluralsight-cloud/content-deploying-and-managing-a-web-application-in-kubernetes-with-terraform/raw/main/eks.zip
+wget https://github.com/pluralsight-cloud/Deploying-Custom-Admission-Controllers-with-Terraform/raw/main/eks.zip
 
 ### Unzip the EKS Terraform Config Files ###
 unzip eks.zip
