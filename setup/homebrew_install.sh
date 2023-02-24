@@ -12,11 +12,6 @@ systemctl start docker.service
 
 sleep 3
 
-#yum -y install git
-sudo yum -y install git
-
-sleep 3
-
 ### Installing Homebrew ###
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
