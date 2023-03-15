@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mutating-test
+spec:
+  containers:
+    - name: mutating-test
+      image: ubuntu:focal
+      command: ["/bin/bash"]
+      args: ["-c", "sleep infinity"]

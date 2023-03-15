@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: validating-test
+spec:
+  containers:
+    - name: validating-test
+      image: ubuntu:focal
+      command: ["/bin/bash"]
+      args: ["-c", "sleep infinity"]
