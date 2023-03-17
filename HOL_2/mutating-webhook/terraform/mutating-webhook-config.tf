@@ -19,8 +19,11 @@ resource "kubernetes_mutating_webhook_configuration" "pod_label_add" {
     }
 
     rule {
-      operations = ["CREATE"]
-      scope      = "Namespaced"
+      api_groups   = [""]
+      api_versions = ["v1"]
+      resources   = ["pods"]
+      operations  = ["CREATE"]
+      scope       = "Namespaced"
     }
 
     side_effects              = "None"

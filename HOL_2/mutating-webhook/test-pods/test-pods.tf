@@ -1,3 +1,15 @@
+terraform {
+  required_providers {
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+    }
+  }
+}
+
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 resource "kubernetes_pod" "test_app_1" {
   metadata {
     name = "test-app-1"
