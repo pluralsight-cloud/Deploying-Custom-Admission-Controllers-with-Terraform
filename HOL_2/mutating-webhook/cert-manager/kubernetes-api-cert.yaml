@@ -1,0 +1,20 @@
+kind: Certificate
+apiVersion: cert-manager.io/v1
+metadata:
+  name: client
+spec:
+  issuerRef:
+    name: ca-root
+    kind: ClusterIssuer
+  secretName: client-cert
+  duration: 2160h
+  renewBefore: 360h
+  dnsNames:
+    - pod-label-require.guru.com
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    size: 2048
+  usages:
+    - client auth
+    - server auth

@@ -10,7 +10,7 @@ webhooks:
       service:
         namespace: default
         name: mutating-webhook
-        path: /mutate  
+        path: /mutate
     rules:
       - apiGroups: [""]
         apiVersions: ["v1"]

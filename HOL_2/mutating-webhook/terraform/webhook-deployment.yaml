@@ -14,15 +14,7 @@ spec:
     spec:
       containers:
         - name: mutating-webhook
-          image: localhost:5000/mutating-webhook:latest
+          image: <USERNAME>/mutating-webhook:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 443
-          volumeMounts:
-            - name: cert
-              mountPath: /etc/opt
-              readOnly: true
-      volumes:
-        - name: cert
-          secret:
-            secretName: server-cert

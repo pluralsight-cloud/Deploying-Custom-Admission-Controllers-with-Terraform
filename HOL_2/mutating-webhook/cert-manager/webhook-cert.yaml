@@ -1,0 +1,21 @@
+kind: Certificate
+apiVersion: cert-manager.io/v1
+metadata:
+  name: server
+spec:
+  issuerRef:
+    name: ca-root
+    kind: ClusterIssuer
+  secretName: server-cert
+  duration: 2160h
+  renewBefore: 360h
+  dnsNames:
+    - mutating-webhook.default.svc
+    # - validating-webhook.default.svc
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    size: 2048
+  usages:
+    - client auth
+    - server auth

@@ -1,0 +1,42 @@
+kind: MutatingWebhookConfiguration
+apiVersion: admissionregistration.k8s.io/v1
+metadata:
+  name: mutating-webhook
+  #annotations:
+    #cert-manager.io/inject-ca-from: default/client
+webhooks:
+  - name: mutating-webhook
+    rules:
+      - apiGroups: [""]
+        apiVersions: ["v1"]
+        resources: ["pods"]
+        operations: ["CREATE"]
+        scope: Namespaced
+    clientConfig:
+      service:
+        namespace: default
+        name: mutating-webhook
+        path: /mutate
+      caBundle: |
+        LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURGVENDQWYyZ0F3SUJBZ0lKQUphQzBpRjZM
+        eHM5TUEwR0NTcUdTSWIzRFFFQkN3VUFNQ0F4SGpBY0JnTlYKQkFNTUZWQnZaQ0JNWVdKbGJDQkJa
+        R1FnVjJWaWFHOXZhekFnRncweU16QXpNVFl5TURJd016TmFHQTh5TVRJegpNREl5TURJd01qQXpN
+        MW93SURFZU1Cd0dBMVVFQXd3VlVHOWtJRXhoWW1Wc0lFRmtaQ0JYWldKb2IyOXJNSUlCCklqQU5C
+        Z2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUEwYXVpWExDSkRpUUVUSFJGRC84ajV1
+        YSsKZTEreUJIakJOanVYZUJFNzNnTmIwUytIMHpqM0NoQ0FuUUJ3b1NXUW0yNDF1akEyeWNnekZ4
+        cUFlRTVVT2oyTwoyaXc3YUcrKzZadnhEM3pReGwzQVJxMjJvbkx4VWZRSTNnenpVb0wyN1J3TG44
+        M3B0NFo0VkV1eUZOQnNScWhCCjk4ajdZMi9xcDVQVWdZNTkxODNwYlMwVmFiSHc3V2w5WGNwMkVo
+        Wng0NkVteWJaSDc0VzA2aFVCalJick9jUEMKemJFcTNxMERCYWRxT3YzanoyRzdtQnBzUnMzaTFL
+        MTA0NEZIVGt4TlBwU2I5c1lHbmRWUVNWNlVJMXhhcU80OApxNEJMb2FUcXdtRFRWWVo2SFpYczE4
+        aktiT29ZOFRZT3V3VDJYRGNDYW8vRzFkUk4zMFplMXMvbngwMVA3UUlECkFRQUJvMUF3VGpBZEJn
+        TlZIUTRFRmdRVTBENi9FeHZJUEJpNGpSbDV1cmtkOCtadDZESXdId1lEVlIwakJCZ3cKRm9BVTBE
+        Ni9FeHZJUEJpNGpSbDV1cmtkOCtadDZESXdEQVlEVlIwVEJBVXdBd0VCL3pBTkJna3Foa2lHOXcw
+        QgpBUXNGQUFPQ0FRRUFoSmQ3ZHljNHBtc2lwMElrWmFIRDBSNno3VkxVdDZmNEhCRjAwNjdNZm94
+        WXN3K09rVWorCkVxcjRyOVNKNVFEWEZSczlDdG95cEdLVHVCWTM2MTFha1dOdHVjQTNoaENiZ25Y
+        UFZCUW5vWWVzQzMxNkl0QTMKb29tMmhzeUVveEVSc2pQYTI4UWhSMmRPbUZEZHNlbXMvUVZBc29N
+        MnZpbnFidjZhbHMvMncxYWxZV29GTmt5MQpiU1BCcEdWVGQ4c1RPdEJFK280VzBpNXNLZ2Zkc2lR
+        V0N6ZnhwNEdYc2lTZ3VFbWJMT2pUdUtpUUNoUzUwdzZwClM1ajF3V0NLeVlXRzlUQTcyWUxjd3Qw
+        RUF2YTFxc3VZTUdLdXlwaTFzdHkxVUZZTXhheVhuQU40R3JMaWw0VDQKZnRxenFuWnVKOS90Mi9S
+        RmU3aGxFK3lScXVJN3Q1SElrZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    sideEffects: None
+    admissionReviewVersions: ["v1"]
