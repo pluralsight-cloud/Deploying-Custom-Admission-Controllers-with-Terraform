@@ -11,8 +11,9 @@ build-image:
 push-image:
 	docker push <USERNAME>/mutating-webhook:latest
 
-.PHONY: deploy-cert
-deploy-cert:
+.PHONY: deploy-certs
+deploy-certs:
+	kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
 	kubectl apply -f ./cert-manager/ca-bootstrap.yaml
 	kubectl apply -f ./cert-manager/ca-root-cert.yaml
 	kubectl apply -f ./cert-manager/ca-root-ci.yaml

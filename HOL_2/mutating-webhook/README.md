@@ -1,22 +1,14 @@
-# Kubernetes Mutating Webhook example
+# HOL - Create a Mutating Admission Controller Webhook with Terraform
 
 This shows a basic implementation of a mutating webhook.
 
-## Setup
+## Build the Webhook Docker Image
 
-*Note: This relies on TLS certificates to function correctly. Soon that will be added to this repo for a full end-to-end working example.*
-
-This example utilizes a local kind cluster.
+This Lab utilizes an EKS cluster.
 
 ```bash
 $ make build
-$ make build-image-kind
-$ make push-kind
-$ make deploy
-```
-
-## Cleanup
-
-```bash
-$ make cleanup
+$ make build-image
+$ make push-image
+$ make deploy-certs
 ```
