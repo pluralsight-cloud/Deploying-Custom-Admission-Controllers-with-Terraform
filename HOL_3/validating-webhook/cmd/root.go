@@ -128,7 +128,7 @@ func validatePod(w http.ResponseWriter, r *http.Request) {
 			Message: "missing required hello label",
 		}
 	} else if value == "world" {
-		admissionResponse.Warnings = []string{"world will be deprecated for hello in the future"}
+		admissionResponse.Warnings = []string{"world will be deprecated in the future think bigger"}
 	}
 
 	// Construct the response, which is just another AdmissionReview.
