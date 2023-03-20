@@ -77,7 +77,7 @@ resource "kubernetes_validating_webhook_configuration" "pod_label_require" {
   }
 
   webhook {
-    name = "pod-label-require.trstringer.com"
+    name = "pod-label-require.guru.com"
 
     client_config {
       service {
@@ -88,6 +88,9 @@ resource "kubernetes_validating_webhook_configuration" "pod_label_require" {
     }
 
     rule {
+      api_groups   = [""]
+      api_versions = ["v1"]
+      resources   = ["pods"]
       operations = ["CREATE"]
       scope      = "Namespaced"
     }
