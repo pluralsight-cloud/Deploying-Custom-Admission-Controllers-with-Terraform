@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/inject-ca-from: default/client
 webhooks:
-  - name: pod-label-require.trstringer.com
+  - name: pod-label-require.guru.com
     clientConfig:
       service:
         namespace: default
