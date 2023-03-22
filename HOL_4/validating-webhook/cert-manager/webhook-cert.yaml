@@ -10,7 +10,7 @@ spec:
   duration: 2160h
   renewBefore: 360h
   dnsNames:
-    # - mutating-webhook.default.svc
+    - mutating-webhook.default.svc
     - validating-webhook.default.svc
   isCA: false
   privateKey:
